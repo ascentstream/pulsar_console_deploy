@@ -21,9 +21,13 @@ yum install java-11-openjdk
 
 # Nginx
 yum install nginx
+systemctl status nginx
+systemctl start nginx
 
 # Redis
 yum install redis
+systemctl status redis
+systemctl start redis
 
 # DB创建一个库即可，不需要数据层面的初始化
 sql >  create database xxx;
@@ -121,7 +125,7 @@ server {
     gzip_vary on;
     gzip_disable "MSIE [1-6]\.";
 
-    # 前端静态资源打包文件路径（前端物料包解压地址保持一致）
+    # **前端静态资源打包文件路径（前端物料包解压地址保持一致）**
     root /data/console_html;
     
     # 转发api服务
